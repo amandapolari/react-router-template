@@ -2,23 +2,108 @@
 
 ## Índice
 
--   [1. Prática 1](#1-prática-1)
--   [2. Prática 2](#2-prática-2)
--   [3. Prática 3](#3-prática-3)
+-   [1. Configurações Iniciais](#1-configurações-iniciais)
+-   [1. Prática 1](#2-prática-1)
+-   [3. Prática 2](#3-prática-2)
+-   [4. Prática 3](#4-prática-3)
 
-## 1 Prática 1
+## 1. Configurações Iniciais
+
+-   Como o react router é uma biblioteca, precisamos instalá-la. Fazemos isso executando o seguinte comando na raiz do projeto. Para utilizar o `axios`, rode no terminal:
+
+    ```
+    npm install react-router-dom
+    ```
+
+## 2 Prática 1
 
 ### Enunciado
 
+-   Configure o site usando React Router, existem 2 Páginas na aplicação:
+    -   `HomePage` será acessada no path `/`
+    -   `ProfilePage` será acessada no path `/profile/:name`
+-   Crie a pasta `routes` e dentro dela um componente `Router.js`
+-   Dentro de `Router.js`, faça o roteamento dessas páginas para que fiquem acessíveis por URLs
+
 ### Resolução
 
-## 2 Prática 2
+1. Dentro da `src` criei uma pasta chamada `routes` e dentro dessa pasta criei o arquivo `Router.js`
+
+2. Em `Router.js` criar um componente:
+
+    ```
+    import React from 'react'
+
+    const Router = () => {
+    return (
+        <div>
+
+        </div>
+    )
+    }
+
+    export default Router
+    ```
+
+3. Em `Router.js`, criar o `BrowserRouter` que engloba as rotas. Dentro dele criei o `Routes`, e dentro de `Routes` iremos criar o `Route`, e essa última pode ser uma tag única, ficando da seguinte forma:
+
+    ```
+    import React from 'react';
+    import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+    const Router = () => {
+        return (
+            <BrowserRouter>
+                <Routes>
+                    <Route />
+                </Routes>
+            </BrowserRouter>
+        );
+    };
+
+    export default Router;
+    ```
+
+    - Importante:
+        - Todos eles precisam ser importados!
+        - Verifique se essas tags criadas estejam dentro do return!
+
+4. Dentro de `Route` iremos passar o `path` e precisamos indicar também qual é o elemento que irá ser chamado na tela, através do `element`. Ficando da seguinte forma:
+
+```
+(...)
+import HomePage from '../pages/HomePage';
+import ProfilePage from '../pages/ProfilePage';
+
+(...)
+    <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/profile/:name" element={<ProfilePage />} />
+    </Routes>
+(...)
+```
+
+-   Importante:
+    -   É preciso **importar** o que irei chamar dentro do `element`
+
+5 , Em `App.js` chamar o `Router` como componente e importa-lo no topo da página:
+
+```
+
+```
+
+## 3 Prática 2
 
 ### Enunciado
 
+-   Agora faremos a navegação entre as telas"
+-   Olhe para o `Header`:
+    -   Existem dois botões que vamos usar para a navegação entre as páginas
+    -   Crie
+
 ### Resolução
 
-## 3 Prática 3
+## 4 Prática 3
 
 ### Enunciado
 
