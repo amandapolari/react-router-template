@@ -6,6 +6,7 @@
 -   [1. Prática 1](#2-prática-1)
 -   [3. Prática 2](#3-prática-2)
 -   [4. Prática 3](#4-prática-3)
+-   [5. Fixação](#5-fixação)
 
 ## 1. Configurações Iniciais
 
@@ -153,6 +154,43 @@ import ProfilePage from '../pages/ProfilePage';
     -   Importante:
         -   usar crase na hora de passar o path pq vou usar uma variável
 
+-   Organização com coordinator:
+
+    -   Passar as funções do header para o coordinator
+    -   Em Header passar o navegator como primeiro parametro apra todas as funções
+    -   Em `Header`:
+        ```
+                <StyledButton
+                onClick={() => {
+                    goToHome(navegate);
+                }}
+            >
+                Ir para página inicial
+            </StyledButton>
+            <StyledButton
+                onClick={() => {
+                    goToProfile(navegate, 'easley');
+                }}
+            >
+                Ir para página de perfil
+            </StyledButton>
+        ```
+    -   Em `coodinator.js`:
+
+        ```
+        export const goToHome = (navegate) => {
+        navegate('/');
+        };
+
+        export const goToProfile = (navegate, name) => {
+            navegate(`/profile/${name}`);
+        };
+        ```
+
+    -   Importante:
+        -   Não esquecer de **exportar** as funções no `coordinator.js`
+        -   Não esquecer de **importar** as funções no `Header.js`
+
 ## 4 Prática 3
 
 ### Enunciado
@@ -160,5 +198,18 @@ import ProfilePage from '../pages/ProfilePage';
 -   Na página `ProfilePage`, recupere o nome enviado por meio dos parâmetros de caminho (path params)
 -   Altere a mensagem "Página acerca do usuário" para exibir o **nome** enviado pelos parâmetros de caminho, em vez de "usuário"
     -   Ex: "A página acerca de **bananinha**"
+
+### Resolução
+
+-
+
+## 5 Fixação
+
+### Enunciado
+
+-   Crie mais uma página para a aplicação, será a página de erro:
+    -   Crie um arquivo chamado `ErroPage.js`
+    -   Adicione o ErrorPage no Router e atribua o seu path como sendo "\*"
+-   Com isto feito, caso o uauário erre o caminho(url), ele não cairá em uma página vazia
 
 ### Resolução
