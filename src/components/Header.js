@@ -5,16 +5,6 @@ import { goToHome, goToProfile } from '../routes/coordinator';
 function Header() {
     const navegate = useNavigate();
 
-    // console.log(navegate);
-
-    // const goToHome = () => {
-    //     navegate('/');
-    // };
-
-    // const goToProfile = (name) => {
-    //     navegate(`/profile/${name}`);
-    // };
-
     return (
         <StyledHeader>
             <StyledButton

@@ -190,7 +190,7 @@ import ProfilePage from '../pages/ProfilePage';
     -   Importante:
         -   Não esquecer de **exportar** as funções no `coordinator.js`
         -   Não esquecer de **importar** as funções no `Header.js`
-        - A ordem dos parâmetros da função importa!
+        -   A ordem dos parâmetros da função importa!
 
 ## 4 Prática 3
 
@@ -202,7 +202,33 @@ import ProfilePage from '../pages/ProfilePage';
 
 ### Resolução
 
--
+-   Agora iremos ver como capturar o `path params`. Primeiro preciso verificar em qual página tem a informação que eu quero, usei o `useParams()` para fazer essa captura:
+
+```
+(...)
+
+import { useParams } from 'react-router-dom';
+
+(...)
+
+function ProfilePage() {
+    const params = useParams();
+
+    // todo objeto:
+    // console.log(params);
+    // vendo todo objeto vejo que name é o nome da propriedade:
+    // console.log(params.name);
+
+    return (
+        <MainContainer>
+            <Header />
+            <h1>Página acerca do {`${params.name}`}</h1>
+        </MainContainer>
+    );
+}
+
+export default ProfilePage;
+```
 
 ## 5 Fixação
 

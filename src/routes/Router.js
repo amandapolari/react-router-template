@@ -9,6 +9,8 @@ const Router = () => {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/profile/:name" element={<ProfilePage />} />
+                {/* bolachina é a propriedade que aparace quando uso o useParams */}
+                {/* <Route path="/profile/:bolachina" element={<ProfilePage />} /> */}
             </Routes>
         </BrowserRouter>
     );
