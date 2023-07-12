@@ -1,10 +1,35 @@
+import { useNavigate } from 'react-router-dom';
 import { StyledHeader, StyledButton } from '../style';
 
 function Header() {
+    const navegate = useNavigate();
+
+    // console.log(navegate);
+
+    const goToHome = () => {
+        navegate('/');
+    };
+
+    const goToProfile = (name) => {
+        navegate(`/profile/${name}`);
+    };
+
     return (
         <StyledHeader>
-            <StyledButton>Ir para página inicial</StyledButton>
-            <StyledButton>Ir para página de perfil</StyledButton>
+            <StyledButton
+                onClick={() => {
+                    goToHome();
+                }}
+            >
+                Ir para página inicial
+            </StyledButton>
+            <StyledButton
+                onClick={() => {
+                    goToProfile('easley');
+                }}
+            >
+                Ir para página de perfil
+            </StyledButton>
         </StyledHeader>
     );
 }

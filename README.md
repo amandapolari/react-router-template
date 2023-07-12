@@ -99,12 +99,66 @@ import ProfilePage from '../pages/ProfilePage';
 -   Agora faremos a navegação entre as telas"
 -   Olhe para o `Header`:
     -   Existem dois botões que vamos usar para a navegação entre as páginas
-    -   Crie
+    -   Crie um arquivo na pasta routes chamado de `coordinator.js`
+-   Dentro do `coordinator.js`, crie as funções:
+    -   `goToHome`: direciona para a página `HomePage`
+    -   `goToProfile`: direciona para a página `ProfilePage` de um **nome** específico (ex: bananinha)
 
 ### Resolução
+
+-   Função que leva à página inicial:
+
+    ```
+    (...)
+
+    import { useNavigate } from 'react-router-dom';
+
+    (...)
+
+    const navegate = useNavigate();
+
+    const goToHome = () => {
+        navegate('/');
+    };
+
+    (...)
+
+    <StyledButton onClick={() => {goToHome()}}>
+        Ir para página inicial
+    </StyledButton>
+
+    (...)
+    ```
+
+    -   Importante:
+        -   Não esquecer que é preciso importar o `useNavigate`
+        -   E depois chamar no onClick do btn
+
+-   Função que leva à página de profile:
+
+    ```
+    (...)
+
+    const goToProfile = (name) => {
+            navegate(`/profile/${name}`);
+        };
+
+    (...)
+
+    <StyledButton onClick={() => {goToProfile('easley')}}>
+        Ir para página inicial
+    </StyledButton>
+    ```
+
+    -   Importante:
+        -   usar crase na hora de passar o path pq vou usar uma variável
 
 ## 4 Prática 3
 
 ### Enunciado
+
+-   Na página `ProfilePage`, recupere o nome enviado por meio dos parâmetros de caminho (path params)
+-   Altere a mensagem "Página acerca do usuário" para exibir o **nome** enviado pelos parâmetros de caminho, em vez de "usuário"
+    -   Ex: "A página acerca de **bananinha**"
 
 ### Resolução
