@@ -1,5 +1,4 @@
-import styled from "styled-components"
-
+import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
     display: flex;
@@ -8,22 +7,22 @@ export const StyledHeader = styled.header`
     background-color: orange;
     height: 4rem;
     width: 100vw;
-`
+`;
 
 export const StyledButton = styled.button`
-background: transparent;
-border-radius: 3px;
-border: 2px solid #000000;
-color: #000000;
-padding: 0.25em 1em;
-width: 10rem;
-height: 60%;
-&:hover {
-    background: #000000;
-    color: orange;
-    cursor: pointer;
-}
-`
+    background: transparent;
+    border-radius: 3px;
+    border: 2px solid #000000;
+    color: #000000;
+    padding: 0.25em 1em;
+    width: 10rem;
+    height: 60%;
+    &:hover {
+        background: #000000;
+        color: orange;
+        cursor: pointer;
+    }
+`;
 
 export const MainContainer = styled.div`
     display: flex;
@@ -31,4 +30,4 @@ export const MainContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 100vw;
-`
+`;
