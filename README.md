@@ -190,6 +190,7 @@ import ProfilePage from '../pages/ProfilePage';
     -   Importante:
         -   Não esquecer de **exportar** as funções no `coordinator.js`
         -   Não esquecer de **importar** as funções no `Header.js`
+        - A ordem dos parâmetros da função importa!
 
 ## 4 Prática 3
 
