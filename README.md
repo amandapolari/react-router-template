@@ -87,11 +87,20 @@ import ProfilePage from '../pages/ProfilePage';
 -   Importante:
     -   É preciso **importar** o que irei chamar dentro do `element`
 
-5 , Em `App.js` chamar o `Router` como componente e importa-lo no topo da página:
+5. Em `App.js` chamar o `Router` como componente e importei e chamei o componente `Router.js`
+
+```
+(...)
+
+import Router from './routes/Router';
+
+(...)
+
+<Router />
 
 ```
 
-```
+6. 
 
 ## 3 Prática 2
 
