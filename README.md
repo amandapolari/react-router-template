@@ -30,7 +30,7 @@
 
 1. Dentro da `src` criei uma pasta chamada `routes` e dentro dessa pasta criei o arquivo `Router.js`
 
-2. Em `Router.js` criar um componente:
+2. Em `Router.js` criei um componente com o seguinte código:
 
     ```
     import React from 'react'
@@ -46,7 +46,7 @@
     export default Router
     ```
 
-3. Em `Router.js`, criar o `BrowserRouter` que engloba as rotas. Dentro dele criei o `Routes`, e dentro de `Routes` iremos criar o `Route`, e essa última pode ser uma tag única, ficando da seguinte forma:
+3. Em `Router.js`, criei o `BrowserRouter` que engloba as rotas. Dentro dele criei o `Routes`, e dentro de `Routes` o `Route`, e esse último pode ser uma tag única, ficando da seguinte forma:
 
     ```
     import React from 'react';
@@ -66,16 +66,16 @@
     ```
 
     - Importante:
-        - Todos eles precisam ser importados!
-        - Verifique se essas tags criadas estejam dentro do return!
+        - Todos esses components precisam ser importados!
+        - Todos esses componentes **precisam** estar dentro do `return`!
 
-4. Dentro de `Route` iremos passar o `path` e precisamos indicar também qual é o elemento que irá ser chamado na tela, através do `element`. Ficando da seguinte forma:
+4. Dentro de `Route` iremos passar o `path` e precisamos indicar também qual é o elemento que irá ser chamado na tela através do `element`. Ficando da seguinte forma:
 
     ```
     (...)
     import HomePage from '../pages/HomePage';
     import ProfilePage from '../pages/ProfilePage';
-    
+
     (...)
         <Routes>
             <Route path="/" element={<HomePage />} />
@@ -85,21 +85,20 @@
     ```
 
 -   Importante:
-    -   É preciso **importar** o que irei chamar dentro do `element`
+    -   É preciso **importar** os componentes que irei chamar dentro do `element`
 
-5. Em `App.js` chamar o `Router` como componente e importei e chamei o componente `Router.js`
+5. Em `App.js` chamei o `Router` e chamei seu componente da seguinte forma:
 
     ```
     (...)
-    
+
     import Router from './routes/Router';
-    
-    (...)
-    
-    <Router />
-    
-    ```
 
+    (...)
+
+    <Router />
+
+    ```
 
 ## 3 Prática 2
 
@@ -141,7 +140,7 @@
 
     -   Importante:
         -   Não esquecer que é preciso importar o `useNavigate`
-        -   E depois chamar no onClick do btn
+        -   Não esquecer de chamar a função criada dentro do `OnClick`
 
 -   Função que leva à página de profile:
 
@@ -164,9 +163,10 @@
 
 -   Organização com coordinator:
 
-    -   Passar as funções do header para o coordinator
-    -   Em Header passar o navegator como primeiro parametro apra todas as funções
-    -   Em `Header`:
+    -   Dentro de `routes` criar um arquivo chamado `coordinator.js`
+    -   Passar as funções `goToHome` e `goToProfile` do `Header.js` para o `coordinator.js`
+    -   Em `Header.js` passar o `navegate` como **primeiro** parâmetro para todas as funções
+    -   O código ficou assim em `Header`:
         ```
                 <StyledButton
                 onClick={() => {
@@ -183,7 +183,7 @@
                 Ir para página de perfil
             </StyledButton>
         ```
-    -   Em `coodinator.js`:
+    -   O código ficou assim em `coodinator.js`:
 
         ```
         export const goToHome = (navegate) => {
@@ -196,8 +196,8 @@
         ```
 
     -   Importante:
-        -   Não esquecer de **exportar** as funções no `coordinator.js`
-        -   Não esquecer de **importar** as funções no `Header.js`
+        -   Não esquecer de **exportar** as funções no `coordinator.js`;
+        -   Não esquecer de **importar** as funções no `Header.js`;
         -   A ordem dos parâmetros da função importa!
 
 ## 4 Prática 3
@@ -210,23 +210,23 @@
 
 ### Resolução
 
--   Agora iremos ver como capturar o `path params`. Primeiro preciso verificar em qual página tem a informação que eu quero, usei o `useParams()` para fazer essa captura:
+-   Agora iremos ver como capturar o `path params`. Primeiro preciso verificar em qual página tem a informação que eu quero, usei o `useParams()` para fazer essa captura em `ProfilePage.js`:
 
     ```
     (...)
-    
+
     import { useParams } from 'react-router-dom';
-    
+
     (...)
-    
+
     function ProfilePage() {
         const params = useParams();
-    
+
         // todo objeto:
         // console.log(params);
         // vendo todo objeto vejo que name é o nome da propriedade:
         // console.log(params.name);
-    
+
         return (
             <MainContainer>
                 <Header />
@@ -234,7 +234,7 @@
             </MainContainer>
         );
     }
-    
+
     export default ProfilePage;
     ```
 
