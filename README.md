@@ -240,3 +240,31 @@ export default ProfilePage;
 -   Com isto feito, caso o uauário erre o caminho(url), ele não cairá em uma página vazia
 
 ### Resolução
+
+-   Na pasta `pages` adicionei o arquivo `ErroPage.js` com a seguinte estrutura:
+
+    ```
+    import React from 'react';
+    import Header from '../components/Header';
+
+    const ErroPage = () => {
+        return (
+            <>
+                <Header />
+                <h1>Página de Error</h1>
+            </>
+        );
+    };
+
+    export default ErroPage;
+    ```
+
+-   No aquivo `Router.js` adicionei a rota da seguinte maneira:
+    -   Importei:
+        ```
+        import ErroPage from '../pages/ErroPage';
+        ```
+    -   Chamei:
+        ```
+        <Route path="*" element={<ErroPage />} />
+        ```
