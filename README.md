@@ -10,7 +10,7 @@
 
 ## 1. Configurações Iniciais
 
--   Como o react router é uma biblioteca, precisamos instalá-la. Fazemos isso executando o seguinte comando na raiz do projeto. Para utilizar o `axios`, rode no terminal:
+-   Como o react router é uma biblioteca, precisamos instalá-la. Fazemos isso executando o seguinte comando na raiz do projeto:
 
     ```
     npm install react-router-dom
@@ -212,31 +212,31 @@
 
 -   Agora iremos ver como capturar o `path params`. Primeiro preciso verificar em qual página tem a informação que eu quero, usei o `useParams()` para fazer essa captura:
 
-```
-(...)
-
-import { useParams } from 'react-router-dom';
-
-(...)
-
-function ProfilePage() {
-    const params = useParams();
-
-    // todo objeto:
-    // console.log(params);
-    // vendo todo objeto vejo que name é o nome da propriedade:
-    // console.log(params.name);
-
-    return (
-        <MainContainer>
-            <Header />
-            <h1>Página acerca do {`${params.name}`}</h1>
-        </MainContainer>
-    );
-}
-
-export default ProfilePage;
-```
+    ```
+    (...)
+    
+    import { useParams } from 'react-router-dom';
+    
+    (...)
+    
+    function ProfilePage() {
+        const params = useParams();
+    
+        // todo objeto:
+        // console.log(params);
+        // vendo todo objeto vejo que name é o nome da propriedade:
+        // console.log(params.name);
+    
+        return (
+            <MainContainer>
+                <Header />
+                <h1>Página acerca do {`${params.name}`}</h1>
+            </MainContainer>
+        );
+    }
+    
+    export default ProfilePage;
+    ```
 
 ## 5 Fixação
 
