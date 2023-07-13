@@ -71,36 +71,35 @@
 
 4. Dentro de `Route` iremos passar o `path` e precisamos indicar também qual é o elemento que irá ser chamado na tela, através do `element`. Ficando da seguinte forma:
 
-```
-(...)
-import HomePage from '../pages/HomePage';
-import ProfilePage from '../pages/ProfilePage';
-
-(...)
-    <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/profile/:name" element={<ProfilePage />} />
-    </Routes>
-(...)
-```
+    ```
+    (...)
+    import HomePage from '../pages/HomePage';
+    import ProfilePage from '../pages/ProfilePage';
+    
+    (...)
+        <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/profile/:name" element={<ProfilePage />} />
+        </Routes>
+    (...)
+    ```
 
 -   Importante:
     -   É preciso **importar** o que irei chamar dentro do `element`
 
 5. Em `App.js` chamar o `Router` como componente e importei e chamei o componente `Router.js`
 
-```
-(...)
+    ```
+    (...)
+    
+    import Router from './routes/Router';
+    
+    (...)
+    
+    <Router />
+    
+    ```
 
-import Router from './routes/Router';
-
-(...)
-
-<Router />
-
-```
-
-6. 
 
 ## 3 Prática 2
 
